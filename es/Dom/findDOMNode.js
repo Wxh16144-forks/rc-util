@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom';
+
 /**
  * Return if a node is a DOM node. Else will return by `findDOMNode`
  */

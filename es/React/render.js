@@ -24,6 +24,9 @@ function toggleWarning(skip) {
   }
 }
 var MARK = '__rc_react_root__';
+
+// ========================== Render ==========================
+
 function modernRender(node, container) {
   toggleWarning(true);
   var root = container[MARK] || createRoot(container);
@@ -34,6 +37,7 @@ function modernRender(node, container) {
 function legacyRender(node, container) {
   reactRender(node, container);
 }
+
 /** @private Test usage. Not work in prod */
 export function _r(node, container) {
   if (process.env.NODE_ENV !== 'production') {
@@ -47,6 +51,7 @@ export function render(node, container) {
   }
   legacyRender(node, container);
 }
+
 // ========================= Unmount ==========================
 function modernUnmount(_x) {
   return _modernUnmount.apply(this, arguments);
@@ -72,6 +77,7 @@ function _modernUnmount() {
 function legacyUnmount(container) {
   unmountComponentAtNode(container);
 }
+
 /** @private Test usage. Not work in prod */
 export function _u(container) {
   if (process.env.NODE_ENV !== 'production') {
